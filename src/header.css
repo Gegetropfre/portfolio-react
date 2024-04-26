@@ -1,0 +1,93 @@
+@import url('./index.css');
+
+/* menu avec boutons */
+
+
+.header{
+    width: 100vw;
+    height: 14vh;
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    z-index: 2;
+
+  
+  }
+  .ad{
+    height: 30%;
+    background-color: var(--jaunedingz);
+    border-bottom: solid black 2px;
+    font-family: Siffea;
+}
+
+
+.name{
+    height: 40%;
+    background-color: var(--beigedingz);
+    border-bottom: solid black 2px;
+    display: flex;
+    align-items: center;
+    padding-left: 3rem;
+    
+}
+
+.name h1{
+    font-family: Fiontina;
+    font-size: 3rem;
+    
+}
+
+.menu{
+    height: 30%;
+    border-bottom: solid black 2px;
+    background-color: white;
+    font-family: SpoofTrial;
+  
+  }
+  .menu ul {
+    width: 100vw;
+    height: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 5rem;
+    list-style-type: none;
+    position: sticky; /* Ajout de position sticky ici */
+    top: 0; /* La barre de navigation restera collée en haut de la fenêtre */
+  }
+  
+  .menu li {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    border-right: solid black 2px;
+    cursor: pointer;
+  }
+  
+  .menu li:hover {
+    background-color: var(--vertdingz);
+  }
+  
+  .menu a {
+    text-decoration: none;
+    color: black;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .menu img {
+    height: 24px;
+    width: 24px;
+  }
+  
+  .open {
+    transform: rotate(180deg);
+    transition: 0.3s;
+  }
+
+
+
+
+  

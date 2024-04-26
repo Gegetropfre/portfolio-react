@@ -1,5 +1,6 @@
 import './index.css';
 import { useState } from 'react';
+import './header.css'
 
 function Header() {
     const [isOpen, setIsOpen] = useState(Array(5).fill(false));
@@ -16,16 +17,19 @@ function Header() {
         <div className="header">
             <div className="ad"></div>
             <div className="name">
-                <h1>Audric</h1>
+                <h1>AUDRIC</h1>
             </div>
             <div className="menu">
                 <ul>
                     {/* Utilisation de isOpen[index] pour appliquer la classe uniquement à l'élément ouvert */}
-                    <li onClick={() => handleItemClick(0)}><a href="#"><p>Accueil</p><img className={isOpen[0] ? 'open' : ''} src="src\assets\icons\arrow-up-svgrepo-com.svg" alt="" /></a></li>
-                    <li onClick={() => handleItemClick(1)}><a href="#"><p>A propos</p><img className={isOpen[1] ? 'open' : ''} src="src\assets\icons\arrow-up-svgrepo-com.svg" alt="" /></a></li>
-                    <li onClick={() => handleItemClick(2)}><a href="#"><p>Compétences</p><img className={isOpen[2] ? 'open' : ''} src="src\assets\icons\arrow-up-svgrepo-com.svg" alt="" /></a></li>
-                    <li onClick={() => handleItemClick(3)}><a href="#"><p>Veilles techno</p><img className={isOpen[3] ? 'open' : ''} src="src\assets\icons\arrow-up-svgrepo-com.svg" alt="" /></a></li>
-                    <li onClick={() => handleItemClick(4)}><a href="#"><p>Contact</p><img className={isOpen[4] ? 'open' : ''} src="src\assets\icons\arrow-up-svgrepo-com.svg" alt="" /></a></li>
+                    <li onClick={() => handleItemClick(0)}><a href="#"><p>ACCUEIL</p><img className={isOpen[0] ? 'open' : ''} src="src\assets\icons\arrow-up-svgrepo-com.svg" alt="" /></a></li>
+                    <li onClick={() => handleItemClick(1)}><a href="#"><p>ABOUT</p><img className={isOpen[1] ? 'open' : ''} src="src\assets\icons\arrow-up-svgrepo-com.svg" alt="" /></a></li>
+                    <li onClick={() => handleItemClick(2)}><a href="#"><p>COMPETENCES</p><img className={isOpen[2] ? 'open' : ''} src="src\assets\icons\arrow-up-svgrepo-com.svg" alt="" /></a></li>
+                    <li onClick={() => handleItemClick(3)}><a href="#"><p>VEILLES</p><img className={isOpen[3] ? 'open' : ''} src="src\assets\icons\arrow-up-svgrepo-com.svg" alt="" /></a></li>
+                    <li onClick={() => handleItemClick(4)}><a href="#"><p>CONTACT</p><img className={isOpen[4] ? 'open' : ''} src="src\assets\icons\arrow-up-svgrepo-com.svg" alt="" /></a></li>
+                    <li></li>
+                    <li></li>
+                    <li onClick={() => handleItemClick(4)}><a href="#"><p>Git</p></a></li>
                 </ul>
             </div>
         </div>

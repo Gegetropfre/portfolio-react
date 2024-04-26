@@ -3,15 +3,17 @@ import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './index.css'
 import Header from './header'
-import Home from './Home'
+import About from './Home'
+import Veilles from './Veilles'
 
 function App() {
 
 
   return (
     <>
-      <Header></Header>
-      <Home></Home>
+      <Header />
+      <About />
+      <Veilles />
       
     </>
   )
