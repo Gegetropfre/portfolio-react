@@ -12,12 +12,17 @@ function Home() {
                 <div className="home-left">
                     <h1>Who am I ?
                     <img className="exclamation" src="src/assets/icons/excalamation1-svgrepo-com.svg" alt="" />
-
                     </h1>
+
                     <h3>Etudiant en développement informatique</h3>
                     <p>1ère année de BTS SIO option SLAM (Solutions logicielles et applications métier)</p>
                 </div>
-                <div className="home-right"></div>
+                <div className="home-right">
+                    <img src="src/assets/icons/react-icon.png" alt="" />
+                    <img src="src/assets/icons/php-icon.png" alt="" />
+                    <img className="imgC" src="src/assets/icons/c++-icon.png" alt="" />
+                    <img className="imgJS" src="src/assets/icons/javascript-icon.png" alt="" />
+                </div>
             </div>
         </div>
      );

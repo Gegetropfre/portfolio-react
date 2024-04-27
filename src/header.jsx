@@ -8,7 +8,7 @@ function Header() {
     const handleItemClick = (index) => {
         // Créer un nouveau tableau avec tous les éléments à false, sauf celui cliqué qui est mis à true
         const updatedState = Array(5).fill(false);
-        updatedState[index] = true;
+        updatedState[index] = !isOpen[index];
         // Mettre à jour l'état avec le nouveau tableau
         setIsOpen(updatedState);
     };
@@ -28,8 +28,9 @@ function Header() {
                     <li onClick={() => handleItemClick(3)}><a href="#"><p>VEILLES</p><img className={isOpen[3] ? 'open' : ''} src="src\assets\icons\arrow-up-svgrepo-com.svg" alt="" /></a></li>
                     <li onClick={() => handleItemClick(4)}><a href="#"><p>CONTACT</p><img className={isOpen[4] ? 'open' : ''} src="src\assets\icons\arrow-up-svgrepo-com.svg" alt="" /></a></li>
                     <li></li>
-                    <li></li>
-                    <li onClick={() => handleItemClick(4)}><a href="#"><p>Git</p></a></li>
+                    <li onClick={() => handleItemClick(4)}>
+                        <img src="src/assets/icons/github.png" alt="" />
+                    </li>
                 </ul>
             </div>
         </div>
@@ -37,3 +38,8 @@ function Header() {
 }
 
 export default Header;
+
+
+
+
+  

@@ -1,18 +1,19 @@
 .home{
-    height: 100vh;
+    height: 110vh;
     display: flex;
     flex-direction: column;
+    position: relative;
+    top: 14vh;
 
 }
 
 
 /* HOME HEADER */
 .home-header {
-    height: 36vh;
+    height: 25%;
     border-bottom: solid black 2px;
     background-color: var(--violetdingz);
     position: relative;
-    top: 14vh;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -30,11 +31,10 @@
 
 .home-bottom{
     background-color: var(--beigedingz);
-    height: 50vh;
+    height: 80%;
     width: 100vw;
     display: flex;
     position: relative;
-    top: 14vh;
     border-bottom: solid black 2px;
 }
 
@@ -44,6 +44,7 @@
     border-right: solid black 2px;
     padding-top: 2rem;
     padding-left: 10rem;
+
 }
 
 .home-left h1{
@@ -64,4 +65,41 @@
 .home-right{
     width: 50vw;
     height: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr ;
+    padding-top: 3Rem;
+    padding-left: 5rem;
 }
+
+.home-right img{
+    height: 5rem;
+    width: 5rem;
+    
+}
+
+.imgJS{
+    position: relative;
+    bottom: 5rem;
+    left: 7rem;
+}
+.imgC{
+    position: relative;
+    bottom: 5rem;
+    left: 7rem;
+}
+
+
+
+@media screen and (max-width: 2200px) {
+  
+    .home{
+        top:25vh;
+    }
+  
+    .home-left{
+        padding-left: 5rem;
+    }
+  
+  }
+  
