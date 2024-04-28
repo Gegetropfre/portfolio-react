@@ -15,9 +15,25 @@
   }
   .ad{
     height: 30%;
-    background-color: var(--jaunedingz);
+    /* background-color: var(--jaunedingz); */
+    background-color: #dbe7ef;
     border-bottom: solid black 2px;
     font-family: Siffea;
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    width: 300vw;
+}
+
+.ad-content {
+  animation: scrollText 50s linear infinite; /* Animation de défilement */
+  white-space: nowrap;
+  margin-left: 3rem;
+}
+
+@keyframes scrollText {
+  0% { transform: translateX(100%); } /* Déplacement initial */
+  100% { transform: translateX(-100%); } /* Déplacement final */
 }
 
 
@@ -34,6 +50,7 @@
 .name h1{
     font-family: Fiontina;
     font-size: 3rem;
+    cursor: pointer;
     
 }
 
@@ -48,7 +65,7 @@
     width: 100vw;
     height: 100%;
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr  1fr 5rem;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 5rem;
     list-style-type: none;
     position: sticky; /* Ajout de position sticky ici */
     top: 0; /* La barre de navigation restera collée en haut de la fenêtre */
@@ -92,6 +109,12 @@
     transform: rotate(180deg);
     transition: 0.3s;
   }
+
+
+
+.li-active{
+  background-color: var(--vertdingz);
+}
 
   
 /* Ecrans en dessous de 2200px de largeur */

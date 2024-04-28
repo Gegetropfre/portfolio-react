@@ -1,8 +1,8 @@
 .home{
-    height: 110vh;
+    height: 160vh;
     display: flex;
     flex-direction: column;
-    position: relative;
+    /* position: relative; */
     top: 14vh;
 
 }
@@ -10,9 +10,11 @@
 
 /* HOME HEADER */
 .home-header {
-    height: 25%;
+    height: 20%;
     border-bottom: solid black 2px;
-    background-color: var(--violetdingz);
+    /* background-color: var(--violetdingz); */
+    background-color: #a9bea7;
+
     position: relative;
     display: flex;
     justify-content: center;
@@ -23,6 +25,13 @@
 .home-header h1{
     font-family: Monstac;
     font-size: 5rem;
+}
+
+.home-header img{
+    width: 2rem;
+    position: relative;
+    bottom: 1rem;
+    height: 2rem;
 }
 
 
@@ -44,6 +53,9 @@
     border-right: solid black 2px;
     padding-top: 2rem;
     padding-left: 10rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
 
 }
 
@@ -60,6 +72,20 @@
     transform: rotate(13deg);
 }
 
+#dev{
+    width: 20%;
+    height: 15%;
+    position: relative;
+    top: 2rem;
+    left: 1rem;
+}
+#dj{
+    width: 20%;
+    height: 15%;
+    position: relative;
+    bottom: 60px;
+    left: 20rem;
+}
 
 
 .home-right{
@@ -80,15 +106,20 @@
 
 .imgJS{
     position: relative;
-    bottom: 5rem;
+    bottom: 12rem;
     left: 7rem;
 }
 .imgC{
     position: relative;
-    bottom: 5rem;
+    bottom: 12rem;
     left: 7rem;
 }
 
+#CV{
+    width: 30rem;
+    height: 40rem;
+    position: absolute;
+}
 
 
 @media screen and (max-width: 2200px) {

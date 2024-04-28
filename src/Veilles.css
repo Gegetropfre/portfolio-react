@@ -1,0 +1,23 @@
+
+.veilles{
+    width: 100vw;
+    height: 100vh;
+    background-color: var(--beigedingz);
+}
+
+
+
+header{
+    width: 100%;
+    height: 30%;
+    display: flex;
+    justify-content: center;
+    align-items:center;
+    background-color: #afcfff;
+    border-bottom: solid black 2px;
+}
+
+header h1{
+    font-family: Monstac;
+    font-size: 5rem;
+}

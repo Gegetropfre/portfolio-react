@@ -1,34 +1,74 @@
+import React, { useState, useEffect } from 'react';
 import './index.css';
-import { useState } from 'react';
-import './header.css'
+import './header.css';
 
 function Header() {
     const [isOpen, setIsOpen] = useState(Array(5).fill(false));
+    const [activeIndex, setActiveIndex] = useState(-1);
+    const [paths, setPaths] = useState({
+        0: '#home',
+        1: '#home-bottom',
+        2: '#skills',
+        3: '#veilles',
+        4: '#contact'
+    });
+
+    // État pour stocker le contenu de l'annonce
+    const [adContent, setAdContent] = useState("Promotion ! :     Etudiant motivé cherche alternance !!  ");
+
+    useEffect(() => {
+        const interval = setInterval(() => {
+            // Mettre à jour le contenu de l'annonce avec une nouvelle annonce
+            // Pour l'instant, nous allons juste utiliser une annonce statique
+            setAdContent("Découvrez mes projets sur GitHub !");
+        }, 7000); // Changez le délai selon vos besoins
+
+        return () => clearInterval(interval); // Nettoyer l'intervalle lors du démontage du composant
+    }, []);
 
     const handleItemClick = (index) => {
-        // Créer un nouveau tableau avec tous les éléments à false, sauf celui cliqué qui est mis à true
         const updatedState = Array(5).fill(false);
         updatedState[index] = !isOpen[index];
-        // Mettre à jour l'état avec le nouveau tableau
         setIsOpen(updatedState);
+    
+        if (!isOpen[index]) {
+            setActiveIndex(index);
+            const element = document.querySelector(paths[index]);
+            if (element) {
+                const windowHeight = window.innerHeight;
+                const elementPosition = element.getBoundingClientRect().top + window.scrollY;
+                const targetPosition = elementPosition - (windowHeight * 0.25);
+                window.scrollTo({ top: targetPosition, behavior: 'smooth' });
+            }
+        } else {
+            setActiveIndex(-1);
+        }
     };
-
+    
     return (
         <div className="header">
-            <div className="ad"></div>
+            <div className="ad">
+                {/* Afficher le contenu de l'annonce */}
+                {Array.from({ length: 5 }).map((_, index) => (
+                    <p key={index} className="ad-content">{adContent}</p>
+                ))}
+            </div>
+
             <div className="name">
-                <h1>AUDRIC</h1>
+                <h1 onClick={() => window.location.href = ''}>AUDRIC</h1>
             </div>
             <div className="menu">
                 <ul>
-                    {/* Utilisation de isOpen[index] pour appliquer la classe uniquement à l'élément ouvert */}
-                    <li onClick={() => handleItemClick(0)}><a href="#"><p>ACCUEIL</p><img className={isOpen[0] ? 'open' : ''} src="src\assets\icons\arrow-up-svgrepo-com.svg" alt="" /></a></li>
-                    <li onClick={() => handleItemClick(1)}><a href="#"><p>ABOUT</p><img className={isOpen[1] ? 'open' : ''} src="src\assets\icons\arrow-up-svgrepo-com.svg" alt="" /></a></li>
-                    <li onClick={() => handleItemClick(2)}><a href="#"><p>COMPETENCES</p><img className={isOpen[2] ? 'open' : ''} src="src\assets\icons\arrow-up-svgrepo-com.svg" alt="" /></a></li>
-                    <li onClick={() => handleItemClick(3)}><a href="#"><p>VEILLES</p><img className={isOpen[3] ? 'open' : ''} src="src\assets\icons\arrow-up-svgrepo-com.svg" alt="" /></a></li>
-                    <li onClick={() => handleItemClick(4)}><a href="#"><p>CONTACT</p><img className={isOpen[4] ? 'open' : ''} src="src\assets\icons\arrow-up-svgrepo-com.svg" alt="" /></a></li>
+                    {Object.keys(paths).map((index) => (
+                        <li key={index} className={activeIndex === Number(index) ? 'li-active' : ''} onClick={() => handleItemClick(Number(index))}>
+                            <a>
+                                <p>{index === '0' ? 'ACCUEIL' : index === '1' ? 'ABOUT' : index === '2' ? 'COMPETENCES' : index === '3' ? 'VEILLES' : 'CONTACT'}</p>
+                                <img className={isOpen[Number(index)] ? 'open' : ''} src="src\assets\icons\arrow-up-svgrepo-com.svg" alt="" />
+                            </a>
+                        </li>
+                    ))}
                     <li></li>
-                    <li onClick={() => handleItemClick(4)}>
+                    <li onClick={() => window.open('https://github.com/Obrikk/', '_blank')}>; 
                         <img src="src/assets/icons/github.png" alt="" />
                     </li>
                 </ul>
@@ -38,8 +78,3 @@ function Header() {
 }
 
 export default Header;
-
-
-
-
-  

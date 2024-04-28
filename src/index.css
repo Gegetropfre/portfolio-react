@@ -27,6 +27,11 @@ body{
   height: 400vh;
 }
 
+main{
+  padding-top: 25vh;
+
+}
+
 
 @font-face {
   font-family: Siffea;
